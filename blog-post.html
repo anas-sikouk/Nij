@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | Annacer Assurance</title>
+    <meta name="description" content="Article détaillé sur l'assurance - Annacer Assurance Sidi Kacem.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { blue: '#002D62', red: '#E30613', slate: '#0F172A', gold: '#B89655', accent: '#F1F5F9', dark: '#020617' }
+                    },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], display: ['Outfit', 'sans-serif'] },
+                    borderRadius: { '4xl': '2rem', '5xl': '3.5rem' },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root { --primary: #002D62; --secondary: #E30613; --glass: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.1); }
+        body { background-color: #020617; color: #f8fafc; overflow-x: hidden; }
+        .glass { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border); }
+        .glass-dark { background: rgba(0,0,0,0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.17,0.55,0.55,1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #E30613; transition: width 0.3s; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .article-content h2 { font-size: 1.8rem; font-weight: 900; margin-top: 2.5rem; margin-bottom: 1rem; font-style: italic; }
+        .article-content p { margin-bottom: 1.5rem; line-height: 1.8; }
+        .article-content ul { list-style: disc; padding-left: 2rem; margin-bottom: 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh; background: rgba(2,6,23,0.98); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-left: 1px solid rgba(255,255,255,0.08); z-index: 200; transition: right 0.4s; }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 199; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .mobile-menu-overlay.active { opacity: 1; pointer-events: auto; }
+        ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: #020617; } ::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary),var(--secondary)); border-radius: 5px; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <div class="fixed inset-0 pointer-events-none z-[100] opacity-[0.03]" style="background-image:url('https://grainy-gradients.vercel.app/noise.svg')"></div>
+
+    <header id="navbar" class="fixed w-full z-[90] transition-all duration-500 py-6">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="glass rounded-3xl px-8 py-4 flex justify-between items-center border-white/5">
+                <a href="index.html" class="flex items-center space-x-4">
+                    <div class="relative w-12 h-12 bg-brand-dark rounded-xl flex items-center justify-center text-white border border-white/10"><i class="fas fa-shield-halved text-brand-red text-xl"></i></div>
+                    <div><span class="block text-xl font-black tracking-tighter uppercase leading-none">Annacer</span><span class="text-[10px] font-bold text-brand-red uppercase tracking-[0.3em]">Assurance & Conseil</span></div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-10">
+                    <ul class="flex space-x-8 text-[11px] font-extrabold uppercase tracking-widest">
+                        <li><a href="index.html" class="nav-link text-slate-400 hover:text-white">Accueil</a></li>
+                        <li><a href="about.html" class="nav-link text-slate-400 hover:text-white">À Propos</a></li>
+                        <li><a href="services.html" class="nav-link text-slate-400 hover:text-white">Services</a></li>
+                        <li><a href="blog.html" class="nav-link active text-white">Blog</a></li>
+                        <li><a href="faq.html" class="nav-link text-slate-400 hover:text-white">FAQ</a></li>
+                        <li><a href="contact.html" class="nav-link text-slate-400 hover:text-white">Contact</a></li>
+                    </ul>
+                    <a href="tel:0537595910" class="bg-white text-brand-dark px-8 py-3 rounded-2xl font-black text-xs hover:bg-brand-red hover:text-white">05 37 59 59 10</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+    <div id="mobile-menu" class="mobile-menu flex flex-col justify-center p-10">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 text-white/60 hover:text-white text-2xl"><i class="fas fa-times"></i></button>
+        <ul class="space-y-8 text-xl font-black uppercase tracking-widest">
+            <li><a href="index.html" class="text-slate-400 hover:text-white">Accueil</a></li>
+            <li><a href="about.html" class="text-slate-400 hover:text-white">À Propos</a></li>
+            <li><a href="services.html" class="text-slate-400 hover:text-white">Services</a></li>
+            <li><a href="blog.html" class="text-white hover:text-brand-red">Blog</a></li>
+            <li><a href="faq.html" class="text-slate-400 hover:text-white">FAQ</a></li>
+            <li><a href="contact.html" class="text-slate-400 hover:text-white">Contact</a></li>
+        </ul>
+        <div class="mt-12 pt-8 border-t border-white/10">
+            <a href="tel:0537595910" class="flex items-center gap-3 text-white font-bold text-lg"><i class="fas fa-phone text-brand-red"></i> 05 37 59 59 10</a>
+        </div>
+    </div>
+
+    <section class="pt-48 pb-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div id="article-body" class="glass p-10 lg:p-16 rounded-5xl border-white/10 shadow-2xl reveal"></div>
+            <div class="mt-12 text-center">
+                <a href="blog.html" class="text-brand-red font-black uppercase text-xs tracking-widest hover:text-white"><i class="fas fa-arrow-left mr-2"></i> Retour au blog</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark pt-32 pb-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-[10px] font-black uppercase text-slate-600">&copy; 2026 Agence Annacer. Sidi Kacem.</p>
+        </div>
+    </footer>
+
+    <script>
+        const articlesData = {
+            "accident-auto": {
+                title: "Que faire en cas d'accident ? Le guide étape par étape",
+                category: "Assurance Auto", date: "15 Mai 2026", icon: "fa-car-crash", catColor: "text-brand-red",
+                content: `<p><strong>Un accident est toujours un moment de stress.</strong> Voici la procédure exacte à suivre.</p>
+                    <h2>1. Sécurisez les lieux</h2><p>Allumez vos feux de détresse, enfilez votre gilet réfléchissant et placez le triangle.</p>
+                    <h2>2. Appelez les secours</h2><p>En cas de blessé, contactez le 15 (SAMU) ou le 19 (Police).</p>
+                    <h2>3. Constatez les dégâts</h2><p>Relevez les coordonnées de l'autre conducteur, prenez des photos.</p>
+                    <h2>4. Remplissez le constat</h2><p>Faites-le signer par les deux parties.</p>
+                    <h2>5. Déclarez le sinistre</h2><p>Contactez votre agence Annacer au <strong>05 37 59 59 10</strong> dans les 5 jours.</p>`
+            },
+            "assurance-sante-2026": {
+                title: "Assurance santé au Maroc : tout ce qu'il faut savoir en 2026",
+                category: "Santé", date: "10 Mai 2026", icon: "fa-heart", catColor: "text-blue-400",
+                content: `<p>La couverture santé est devenue incontournable au Maroc.</p>
+                    <h2>Les bases : AMO, CNSS</h2><p>L'Assurance Maladie Obligatoire couvre les salariés.</p>
+                    <h2>Pourquoi une complémentaire ?</h2><p>Une mutuelle complète les remboursements de l'AMO.</p>
+                    <h2>Garanties à vérifier</h2><ul><li>Hospitalisation 100%</li><li>Soins dentaires et optiques</li><li>Maternité</li></ul>`
+            },
+            "visa-schengen": {
+                title: "Visa Schengen : l'assurance voyage obligatoire expliquée",
+                category: "Voyage", date: "2 Mai 2026", icon: "fa-passport", catColor: "text-brand-gold",
+                content: `<p>Pour un visa Schengen, vous devez présenter une assurance répondant à des critères stricts.</p>
+                    <h2>Exigences consulaires</h2><ul><li>Frais médicaux d'urgence</li><li>Rapatriement sanitaire</li><li>Capital minimum 30 000 €</li></ul>
+                    <h2>Notre solution</h2><p>Contrats voyage conformes à 100%. Devis en ligne, attestation immédiate.</p>`
+            },
+            "assurance-habitation": {
+                title: "Pourquoi assurer sa maison au Maroc ?",
+                category: "Habitation", date: "28 Avril 2026", icon: "fa-house-fire", catColor: "text-brand-gold",
+                content: `<p>L'assurance habitation protège votre patrimoine.</p><h2>Risques couverts</h2><ul><li>Incendie</li><li>Dégâts des eaux</li><li>Vol</li></ul>`
+            },
+            "barid-cash-services": {
+                title: "Barid Cash : le guide complet des transferts d'argent",
+                category: "Barid Cash", date: "20 Avril 2026", icon: "fa-money-bill-transfer", catColor: "text-brand-gold",
+                content: `<p>Barid Cash est le service de transfert de la poste marocaine.</p><h2>Comment envoyer de l'argent ?</h2><p>Rendez-vous en agence avec une pièce d'identité.</p>`
+            },
+            "bonus-malus": {
+                title: "Bonus-Malus : comment réduire sa prime d'assurance auto",
+                category: "Assurance Auto", date: "12 Avril 2026", icon: "fa-percent", catColor: "text-brand-red",
+                content: `<p>Le système de bonus-malus récompense les bons conducteurs.</p><h2>Comment ça marche ?</h2><p>Chaque année sans accident responsable, votre coefficient diminue.</p>`
+            },
+            "maternite-assurance": {
+                title: "Assurance maternité : ce que vous devez savoir",
+                category: "Santé", date: "5 Avril 2026", icon: "fa-baby", catColor: "text-blue-400",
+                content: `<p>La maternité est un moment unique qui nécessite une bonne couverture.</p><h2>Ce que couvre l'assurance</h2><ul><li>Consultations prénatales</li><li>Frais d'accouchement</li></ul>`
+            },
+            "voyage-astuces": {
+                title: "5 astuces pour voyager serein",
+                category: "Voyage", date: "28 Mars 2026", icon: "fa-suitcase-rolling", catColor: "text-brand-gold",
+                content: `<h2>1. Vérifiez la couverture médicale</h2><p>Assurez-vous que les frais d'hospitalisation sont bien pris en charge.</p><h2>2. Bagages et annulation</h2><p>Optez pour une assurance qui les inclut.</p>`
+            },
+            "digital-assurance": {
+                title: "L'assurance à l'ère du digital",
+                category: "Innovation", date: "15 Mars 2026", icon: "fa-robot", catColor: "text-blue-400",
+                content: `<p>L'IA révolutionne l'assurance.</p><h2>Notre assistant IA</h2><p>Disponible 24/7 pour répondre à vos questions.</p>`
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id') || 'accident-auto';
+        const article = articlesData[id] || articlesData['accident-auto'];
+
+        document.title = article.title + " | Annacer Assurance";
+        const body = document.getElementById('article-body');
+        body.innerHTML = `
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-brand-red rounded-xl flex items-center justify-center"><i class="fas ${article.icon} text-xl text-white"></i></div>
+                <span class="text-xs font-black uppercase ${article.catColor} tracking-widest">${article.category}</span>
+                <span class="text-xs text-slate-500">${article.date}</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-black font-display italic mb-10">${article.title}</h1>
+            <div class="article-content text-slate-300 leading-relaxed">${article.content}</div>
+            <div class="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-4">
+                <a href="tel:0537595910" class="bg-brand-red text-white px-6 py-3 rounded-xl font-black text-xs uppercase hover:scale-105 transition-transform">Nous appeler</a>
+                <a href="rdv.html" class="bg-white text-brand-dark px-6 py-3 rounded-xl font-black text-xs uppercase hover:scale-105 transition-transform">Prendre RDV</a>
+            </div>`;
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
+        observer.observe(body);
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 100) nav.querySelector('nav').classList.add('glass-dark');
+            else nav.querySelector('nav').classList.remove('glass-dark');
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('mobile-menu-overlay');
+        function open() { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow='hidden'; }
+        function close() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow='auto'; }
+        mobileMenuBtn.addEventListener('click', open);
+        mobileMenuClose.addEventListener('click', close);
+        overlay.addEventListener('click', close);
+        mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', close));
+    </script>
+</body>
+</html>
