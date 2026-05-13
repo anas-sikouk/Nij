@@ -10,34 +10,17 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">(function(){emailjs.init("vk3TsCj2TbhWy2OOB");})();</script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { blue: '#002D62', red: '#E30613', slate: '#0F172A', gold: '#B89655', accent: '#F1F5F9', dark: '#020617' }
-                    },
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], display: ['Outfit', 'sans-serif'] },
-                    borderRadius: { '4xl': '2rem', '5xl': '3.5rem' },
-                }
-            }
-        }
-    </script>
+    <script>tailwind.config={theme:{extend:{colors:{brand:{blue:'#002D62',red:'#E30613',slate:'#0F172A',gold:'#B89655',accent:'#F1F5F9',dark:'#020617'}},fontFamily:{sans:['Plus Jakarta Sans','sans-serif'],display:['Outfit','sans-serif']},borderRadius:{'4xl':'2rem','5xl':'3.5rem'}}}}</script>
     <style>
-        :root { --primary: #002D62; --secondary: #E30613; --glass: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.1); }
-        body { background-color: #020617; color: #f8fafc; overflow-x: hidden; }
-        .glass { background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border); }
-        .glass-dark { background: rgba(0,0,0,0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.17,0.55,0.55,1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #E30613; transition: width 0.3s; }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-        .mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh; background: rgba(2,6,23,0.98); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-left: 1px solid rgba(255,255,255,0.08); z-index: 200; transition: right 0.4s; }
-        .mobile-menu.open { right: 0; }
-        .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 199; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
-        .mobile-menu-overlay.active { opacity: 1; pointer-events: auto; }
-        ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: #020617; } ::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary),var(--secondary)); border-radius: 5px; }
+        :root{--primary:#002D62;--secondary:#E30613;--glass:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.1)}
+        body{background-color:#020617;color:#f8fafc}
+        .glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border)}
+        .glass-dark{background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.05)}
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.17,0.55,0.55,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#E30613;transition:width 0.3s ease}
+        .nav-link:hover::after,.nav-link.active::after{width:100%}
+        ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#020617}::-webkit-scrollbar-thumb{background:linear-gradient(var(--primary),var(--secondary));border-radius:5px}
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -61,26 +44,9 @@
                     </ul>
                     <a href="tel:0537595910" class="bg-white text-brand-dark px-8 py-3 rounded-2xl font-black text-xs hover:bg-brand-red hover:text-white">05 37 59 59 10</a>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
             </nav>
         </div>
     </header>
-
-    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
-    <div id="mobile-menu" class="mobile-menu flex flex-col justify-center p-10">
-        <button id="mobile-menu-close" class="absolute top-6 right-6 text-white/60 hover:text-white text-2xl"><i class="fas fa-times"></i></button>
-        <ul class="space-y-8 text-xl font-black uppercase tracking-widest">
-            <li><a href="index.html" class="text-slate-400 hover:text-white">Accueil</a></li>
-            <li><a href="about.html" class="text-slate-400 hover:text-white">À Propos</a></li>
-            <li><a href="services.html" class="text-slate-400 hover:text-white">Services</a></li>
-            <li><a href="blog.html" class="text-slate-400 hover:text-white">Blog</a></li>
-            <li><a href="faq.html" class="text-slate-400 hover:text-white">FAQ</a></li>
-            <li><a href="contact.html" class="text-slate-400 hover:text-white">Contact</a></li>
-        </ul>
-        <div class="mt-12 pt-8 border-t border-white/10">
-            <a href="tel:0537595910" class="flex items-center gap-3 text-white font-bold text-lg"><i class="fas fa-phone text-brand-red"></i> 05 37 59 59 10</a>
-        </div>
-    </div>
 
     <section class="pt-48 pb-20">
         <div class="max-w-3xl mx-auto px-6">
@@ -123,38 +89,23 @@
     </footer>
 
     <script>
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 100) nav.querySelector('nav').classList.add('glass-dark');
-            else nav.querySelector('nav').classList.remove('glass-dark');
-        });
-        const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const overlay = document.getElementById('mobile-menu-overlay');
-        function open() { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow='hidden'; }
-        function close() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow='auto'; }
-        mobileMenuBtn.addEventListener('click', open);
-        mobileMenuClose.addEventListener('click', close);
-        overlay.addEventListener('click', close);
-        mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', close));
-
-        document.getElementById('rdv-form').addEventListener('submit', function(e){
+        window.addEventListener('scroll',()=>{const nav=document.getElementById('navbar');if(window.scrollY>100)nav.querySelector('nav').classList.add('glass-dark');else nav.querySelector('nav').classList.remove('glass-dark')});
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})},{threshold:0.1});
+        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+        document.getElementById('rdv-form').addEventListener('submit',function(e){
             e.preventDefault();
-            const btn = document.getElementById('submit-btn'), orig = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...'; btn.disabled = true;
-            emailjs.send('service_rdh5hvr', 'template_ni1dhzi', {
-                client_name: document.getElementById('client_name').value,
-                client_phone: document.getElementById('client_phone').value,
-                client_service: document.getElementById('client_service').value
-            }).then(() => {
+            const btn=document.getElementById('submit-btn'),orig=btn.innerHTML;
+            btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Envoi...';btn.disabled=true;
+            emailjs.send('service_rdh5hvr','template_ni1dhzi',{
+                client_name:document.getElementById('client_name').value,
+                client_phone:document.getElementById('client_phone').value,
+                client_service:document.getElementById('client_service').value
+            }).then(()=>{
                 document.getElementById('form-header').classList.add('hidden');
                 document.getElementById('rdv-form').classList.add('hidden');
                 document.getElementById('success-message').classList.remove('hidden');
-                btn.innerHTML = orig; btn.disabled = false;
-            }).catch(() => { alert('Erreur.'); btn.innerHTML = orig; btn.disabled = false; });
+                btn.innerHTML=orig;btn.disabled=false;
+            }).catch(()=>{alert('Erreur.');btn.innerHTML=orig;btn.disabled=false});
         });
         function resetForm(){
             document.getElementById('rdv-form').reset();
@@ -164,4 +115,4 @@
         }
     </script>
 </body>
-  </html>
+</html>
